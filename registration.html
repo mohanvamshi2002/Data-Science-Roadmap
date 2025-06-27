@@ -84,18 +84,10 @@
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
 
-            // For demonstration, we're not actually sending data to a server.
-            // In a real application, you would collect this data and send it.
+            // Open the PDF in a new tab, which often triggers download behavior more reliably
+            window.open('https://cdn.codewithmosh.com/image/upload/v1721942360/guides/data-science-roadmap.pdf', '_blank');
 
-            // Simulate download
-            const link = document.createElement('a');
-            link.href = 'https://cdn.codewithmosh.com/image/upload/v1721942360/guides/data-science-roadmap.pdf'; // Path to your PDF file
-            link.download = 'DataScienceRoadmap.pdf'; // Suggested file name for download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Redirect to thank you page
+            // Redirect to thank you page after attempting the download
             window.location.href = 'thankyou.html';
         });
     </script>
